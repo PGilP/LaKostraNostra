@@ -1,0 +1,83 @@
+
+/* VARIABLES */
+:root{
+
+}
+/* FIN VARIABLES */
+
+/* CLASES GENERALES */
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: #1D1D1D;
+}
+
+.wrapper{
+    padding: 150px 142px;
+}
+/* FIN CLASES GENERALES */
+
+
+
+/* HEADER */
+
+header{
+    background-color: #835699;
+    padding: 38px 142px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .brand{
+    width: 129px;
+    display: flex;
+}
+
+header .brand img{
+    width: 100%;
+    align-items: center;
+}
+
+header .links{
+    display: flex;
+    padding-right: 10px;
+}
+
+header .links .link-dropdown{
+    padding: 10px;
+    position: relative;
+}
+header .links .link-dropdown a{
+    padding: 8px 0;
+    margin: 0 10px;
+    font-size: 15px;
+    letter-spacing: .10em;
+}
+
+header .links .list-dropdown{
+    display: none;
+    position: absolute;
+    background-color: #1d1d1d;
+    padding: 15px;
+    white-space: nowrap; /*IMPORTANTEEEEE!!!*/
+    margin-top: 10px;
+}
+
+header .links .list-dropdown a{
+    color: white;
+} 
+
+header .links .link-dropdown:hover .list-dropdown {
+    display: flex;
+    flex-direction: column;
+}
+
+/* FIN HEADER */
