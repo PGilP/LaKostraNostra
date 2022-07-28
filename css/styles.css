@@ -1,7 +1,6 @@
-
 /* VARIABLES */
 :root{
-
+    --main-color: #835699;
 }
 /* FIN VARIABLES */
 
@@ -20,8 +19,18 @@ a{
 }
 
 .wrapper{
-    padding: 150px 142px;
+    padding: 5px 142px;
 }
+
+.brand{
+    width: 129px;
+}
+
+.brand img{
+    width: 100%;
+}
+
+
 /* FIN CLASES GENERALES */
 
 
@@ -29,8 +38,7 @@ a{
 /* HEADER */
 
 header{
-    background-color: #835699;
-    padding: 38px 142px;
+    background-color: var(--main-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -48,16 +56,16 @@ header .brand img{
 
 header .links{
     display: flex;
-    padding-right: 10px;
 }
 
-header .links .link-dropdown{
+header .links .link{
     padding: 10px;
     position: relative;
-}
-header .links .link-dropdown a{
-    padding: 8px 0;
     margin: 0 10px;
+}
+header .links .link a{
+    padding: 8px 0;
+    /* margin: 0 10px; */
     font-size: 15px;
     letter-spacing: .10em;
 }
@@ -75,9 +83,55 @@ header .links .list-dropdown a{
     color: white;
 } 
 
-header .links .link-dropdown:hover .list-dropdown {
+header .links .link.dropdown:hover .list-dropdown {
     display: flex;
     flex-direction: column;
 }
 
 /* FIN HEADER */
+
+/* MAIN */
+main{
+    width: 100%;
+}
+
+main .images-slider{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+main .images-slider .arrow{
+    align-self: center;
+}
+
+main .container-products{
+    background-image: url('../imgs/JPG/fondo_leopardo.jpg'); 
+    background-size: cover;
+}
+
+/* FIN MAIN */
+
+
+
+/* FOOTER */
+footer{
+    background-color: var(--main-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 200px;
+}
+
+
+footer .socials a{
+    margin: auto 5px;
+}
+
+footer .credits{
+    text-align: center;
+}
+
+
+/* FIN FOOTER */

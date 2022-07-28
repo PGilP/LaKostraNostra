@@ -6,21 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Kostra Nostra</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous">
+    </script>
     <link rel="shortcut icon" href="imgs/SVG/logo.svg" type="image/x-icon">
 </head>
 <body>
-    <header>
+    <header class="wrapper">
 
         <div class="brand">
-            <img src="imgs/SVG/logo.svg" alt="Logo La Kostra Nostra">
+            <img id="img-logo" src="imgs/SVG/logo.svg" alt="Logo La Kostra Nostra">
         </div>
         <nav class="links">
-            <div class="link-dropdown">
-                <a href="#" class="link-principal">FEATURE FILMS</a>
-            </div>
 
-            <div class="link-dropdown">
-                <a href="#" class="link-principal">SHORT FILMS</a>
+            <div class="link dropdown products">
+                <a href="#" class="link-principal">PRODUCTOS</a>
                 <div class="list-dropdown films">
                     <a href="">THEATRICAL SHORTS</a>
                     <a href="">DISNEY+</a>
@@ -31,55 +33,12 @@
                 </div>
             </div>
 
-
-
-            <div class="link-dropdown">
-                <a href="#" class="link-principal">TECHNOLOGY</a>
-                <div class="list-dropdown">
-                    <a href="">RENDERMAN</a>
-                    <a href="">GRAPHIC TECHNOLOGIES</a>
-                </div>
+            <div class="link about">
+                <a href="#" class="link-principal">SOBRE MI</a>
             </div>
 
-
-
-            <div class="link-dropdown">
-                <a href="#" class="link-principal">CAREERS</a>
-            </div>
-
-            <div class="list-dropdown">
-                <div>THEATRICAL SHORTS</div>
-                <div>DISNEY+</div>
-                <div>SPARKSHORTS</div>
-                <div>CARS TOONS</div>
-                <div>TOY STORY TOONS</div>
-                <div>HOME ENTERTAINMENT</div>
-            </div>
-
-            <div class="link-dropdown">
-                <a href="#" class="link-principal">EXTRAS</a>
-            </div>
-
-            <div class="list-dropdown">
-                <div>THEATRICAL SHORTS</div>
-                <div>DISNEY+</div>
-                <div>SPARKSHORTS</div>
-                <div>CARS TOONS</div>
-                <div>TOY STORY TOONS</div>
-                <div>HOME ENTERTAINMENT</div>
-            </div>
-
-            <div class="link-dropdown about">
-                <a href="#" class="link-principal">ABOUT</a>
-            </div>
-
-            <div class="list-dropdown about">
-                <div>THEATRICAL SHORTS</div>
-                <div>DISNEY+</div>
-                <div>SPARKSHORTS</div>
-                <div>CARS TOONS</div>
-                <div>TOY STORY TOONS</div>
-                <div>HOME ENTERTAINMENT</div>
+            <div class="link contact">
+                <a href="#" class="link-principal">CONTACTO</a>
             </div>
 
         </nav>
@@ -88,10 +47,41 @@
 
     </header>
     <main>
+        <section class="images-slider">
+            <div class="arrow previous">PPPP</div>
+        
+            <div class="news">
+                <img class="new" src="imgs/JPG/IMG-20220721-WA0004.jpg" alt="">
+            </div>
+        
+            <div class="arrow next">NNNN</div>
+        </section>
 
+
+        <section class="container-products wrapper">
+
+        </section>
     </main>
-    <footer>
+    <footer class="wrapper">
+
+        <div class="brand">
+            <img src="imgs/SVG/logo.svg" alt="Logo La Kostra Nostra">
+        </div>
+        <div class="socials">
+            <a href="">
+                <img src="imgs/SVG/logo-instagram.svg" alt="Icono Instagram">
+            </a>
+
+            <a href="">
+                <img src="imgs/SVG/logo-vinted.svg" alt="Icono Vinted">
+            </a>
+            
+        </div>
+        <div class="credits">
+            Made with ❤️ by Pablo Gil <br> La Kostra Nostra
+        </div>
 
     </footer>
+    <script src="js/functions.js"></script>
 </body>
 </html>
