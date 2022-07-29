@@ -101,13 +101,40 @@ main .images-slider{
     justify-content: center;
 }
 
+main .images-slider img{
+    height: 100%;
+}
+
 main .images-slider .arrow{
     align-self: center;
+    cursor: pointer;
 }
 
 main .container-products{
     background-image: url('../imgs/JPG/fondo_leopardo.jpg'); 
     background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+main .container-products .card{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    background-color: gray;
+    border-radius: 10%;
+    margin: 10px 10px;
+}
+
+main .container-products .card .image{
+    width: 100%;
+
+}
+
+main .container-products .card .image img{
+    width: 100%;
+    border-radius: 10%;
 }
 
 /* FIN MAIN */
