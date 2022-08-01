@@ -8,32 +8,46 @@ $(window).on("load", function(){
 })
 
 $(document).ready(function(){
-
+    
     //Funcion de cambio de imagen al clickar en las flechas
     $(".arrow").click(function(){
         var maximo = 3;
         var imagen =  parseInt($(".new").attr("src").substring(19,20));
-
+        var active = !$(this).hasClass("disabled");
         console.log(imagen);
-        
-        if(imagen == maximo ){
+ 
+
+        if(imagen == maximo && active ){
             console.log("imagen = maximo");
             if($(this).hasClass("previous")){
-                $(".new").attr("src", "imgs/JPG/Novedades/"+(imagen-1)+".jpg");
+                imagen -=1;
+                $(".new").attr("src", "imgs/JPG/Novedades/"+(imagen)+".jpg");
             }
-        }else if(imagen == 1){
-            console.log("imagen = 1");
+        }else if(imagen == 1 && active){
             if($(this).hasClass("next")){
-                $(".new").attr("src", "imgs/JPG/Novedades/"+(imagen+1)+".jpg");
+                imagen +=1;
+                $(".new").attr("src", "imgs/JPG/Novedades/"+(imagen)+".jpg");
             }
-        }else{
+        }else if(active){
             console.log("else");
             if($(this).hasClass("next")){
-                $(".new").attr("src", "imgs/JPG/Novedades/"+(imagen+1)+".jpg");
+                imagen +=1;
+                $(".new").attr("src", "imgs/JPG/Novedades/"+(imagen)+".jpg");
             }else if($(this).hasClass("previous")){
-                $(".new").attr("src", "imgs/JPG/Novedades/"+(imagen-1)+".jpg");
+                imagen -=1;
+                $(".new").attr("src", "imgs/JPG/Novedades/"+(imagen)+".jpg");
             }
         }
+        
+
+        if(imagen == maximo){
+            $(".arrow.next").addClass("disabled");
+        }else if(imagen == 1){
+            $(".arrow.previous").addClass("disabled");
+        }else{
+            $(".arrow").removeClass("disabled");
+        }
+
     });
     //
 
