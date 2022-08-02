@@ -10,6 +10,9 @@
     font-family: 'Raleway';
 }
 
+html{
+    scroll-behavior: smooth;
+}
 body{
     margin: 0;
 }
@@ -29,6 +32,10 @@ a{
 
 .brand img{
     width: 100%;
+}
+
+::-webkit-scrollbar{
+    display: block;
 }
 
 /* FIN CLASES GENERALES */
@@ -59,60 +66,7 @@ a{
 /* FIN FUENTES */
 
 
-/* HEADER */
 
-header{
-    background-color: var(--main-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header .brand{
-    width: 129px;
-    display: flex;
-}
-
-header .brand img{
-    width: 100%;
-    align-items: center;
-}
-
-header .links{
-    display: flex;
-}
-
-header .links .link{
-    padding: 10px;
-    position: relative;
-    margin: 0 10px;
-}
-header .links .link a{
-    padding: 8px 0;
-    /* margin: 0 10px; */
-    font-size: 15px;
-    letter-spacing: .10em;
-}
-
-header .links .list-dropdown{
-    display: none;
-    position: absolute;
-    background-color: #1d1d1d;
-    padding: 15px;
-    white-space: nowrap; /*IMPORTANTEEEEE!!!*/
-    margin-top: 10px;
-}
-
-header .links .list-dropdown a{
-    color: white;
-} 
-
-header .links .link.dropdown:hover .list-dropdown {
-    display: flex;
-    flex-direction: column;
-}
-
-/* FIN HEADER */
 
 /* MAIN */
 main{
@@ -145,6 +99,7 @@ main .images-slider .arrow span{
 }
 
 main .container-products{
+    position: relative;
     background-image: url('../imgs/JPG/fondo_leopardo.jpg');
     background-size: cover;
     display: flex;
@@ -169,7 +124,8 @@ main .container-products .card .image{
 
 main .container-products .card .desc{
     text-align: center;
-    font-size: 2vw;
+    font-size: 1.8vw;
+    padding: 0 8px 5px;
 }
 
 main .container-products .card .image img{
@@ -177,31 +133,48 @@ main .container-products .card .image img{
     border-radius: 10%;
 }
 
+main .lightbox{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    overflow-x:hidden;
+    overflow-y:hidden;
+}
+
+main .lightbox .container-lightbox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+}
+
+main .lightbox .container-lightbox .img-principal{
+    height: 200px;
+    width: 200px;
+    background-color: blue;
+}
+
+main .lightbox .hide{
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+main .lightbox .container-lightbox .dos{
+    color: white;
+    position: absolute;
+    top: 200px;
+    right: 500px;
+}
+
 /* FIN MAIN */
 
-
-
-/* FOOTER */
-footer{
-    background-color: var(--main-color);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 200px;
-}
-
-
-footer .socials a{
-    margin: auto 5px;
-}
-
-footer .credits{
-    text-align: center;
-}
-
-
-/* FIN FOOTER */
 
 
 /* MEDIA QUERYS*/

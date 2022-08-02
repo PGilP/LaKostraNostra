@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../imgs/SVG/logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("A77eRGojrYYukex48");
+        })();
+
+        window.onload = function() {
+            // window cargado
+            document.getElementById('contact-form').addEventListener('submit',function(event){
+                event.preventDefault(); //Se usa para cortar un evento y ejecutar solo lo que me interesa
+                console.log("HOla");
+
+                emailjs.sendForm('service_ixjx2cr', 'template_wms6ovv', this)
+                    .then( 
+                        function( success){
+                            //Envio con exito
+                            console.log('exito', success);
+                        },
+                        function(error){
+                            //Envio con error
+                            console.log('error', error);
+                        }
+                    );
+            });
+
+
+        };
+
+
+
+    </script>
+    <title>La Kostra Nostra</title>
+</head>
+<body>
+    <header class="wrapper">
+
+        <div class="brand">
+            <img id="img-logo" src="../imgs/SVG/logo.svg" alt="Logo La Kostra Nostra" onclick="window.location.href = '../index.html'">
+        </div>
+        <nav class="links">
+
+            <div class="link dropdown products">
+                <a href="#" class="link-principal">PRODUCTOS</a>
+                <div class="list-dropdown films">
+                    <a href="#"></a>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                    <a href="car-toons.html"></a>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                </div>
+            </div>
+
+            <div class="link about">
+                <a href="#" class="link-principal">SOBRE MI</a>
+            </div>
+
+            <div class="link contact">
+                <a href="#" class="link-principal">CONTACTO</a>
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main>
+        <section class="send-data wrapper">
+            <form id="contact-form">
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre">
+                <br>
+
+                <label for="correo">Email</label>
+                <input type="email" name="correo" id="correo">
+                <br>
+
+                <label for="asunto">Asunto</label>
+                <input type="text" name="asunto" id="asunto">
+                <br>
+
+                <label for="mensaje">Mensaje</label>
+
+                <textarea id="mensaje" name="mensaje" rows="4" cols="50"></textarea>
+                
+                <br>
+
+                <input type="submit" value="Enviar">
+            </form>
+        </section>
+    </main>
+
+    <footer class="wrapper">
+
+        <div class="brand">
+            <img src="../imgs/SVG/logo.svg" alt="Logo La Kostra Nostra">
+        </div>
+        <div class="socials">
+            <a href="https://www.instagram.com/lakostranostra1312/?hl=es" target="_blank">
+                <img src="../imgs/SVG/logo-instagram.svg" alt="Icono Instagram">
+            </a>
+
+            <a href="https://www.vinted.es/member/74937644-lakostranostra" target="_blank">
+                <img src="../imgs/SVG/logo-vinted.svg" alt="Icono Vinted">
+            </a>
+            
+        </div>
+        <div class="credits">
+            <span>☣️Ropa hecha a mano y a medida☣️</span>
+            <br>
+            <span>☣️!Ama el arte, el punk y la rebeldía!☣️</span>
+            <br>
+            <span>Made with &#x2764;&#xFE0F; by Pablo Gil.</span>
+        </div>
+
+    </footer>
+    <script src="../js/functions.js"></script>
+</body>
+</html>

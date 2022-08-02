@@ -51,4 +51,18 @@ $(document).ready(function(){
     });
     //
 
+    // Lightbox
+    $(".product.card").click(function(){
+        $(".lightbox").show();
+        $("::-webkit-scrollbar").css(
+            {"display": "none"}
+        )
+
+    });
+
+    $(".lightbox .hide").click(function(){
+        $(".lightbox").hide();
+    });
+    //
+
 });
