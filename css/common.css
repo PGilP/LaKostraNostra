@@ -34,9 +34,26 @@ a{
     width: 100%;
 }
 
-::-webkit-scrollbar{
-    display: block;
+.scrollbarInvisible{
+    width : 100vw;
+    height : 100vh;
+    overflow : hidden;
 }
+
+.arrow{
+    align-self: center;
+    cursor: pointer;
+}
+
+.arrow.disabled{
+    color:grey;
+    cursor: default;
+}
+
+.arrow span{
+    font-size: 50px;
+}
+
 
 /* FIN CLASES GENERALES */
 
@@ -140,7 +157,7 @@ main .lightbox{
     left: 0;
     height: 100vh;
     width: 100%;
-    background-color: black;
+    background-color: rgba(0,0,0, 0.9);
     overflow-x:hidden;
     overflow-y:hidden;
 }
@@ -149,30 +166,45 @@ main .lightbox .container-lightbox{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
-
+    height: 100%;
 }
 
-main .lightbox .container-lightbox .img-principal{
-    height: 200px;
-    width: 200px;
-    background-color: blue;
+main .lightbox .container-lightbox .container-img-principal{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .lightbox .container-lightbox .container-img-principal .img-principal{
+    height: 800px;
+}
+
+main .lightbox .container-lightbox .container-img-principal .img-principal .principal-img-lihgtbox{
+    height: 100%;
 }
 
 main .lightbox .hide{
     color: white;
-    position: absolute;
-    top: 0;
-    right: 0;
+    align-self: flex-end;
+    cursor:pointer;
+    margin: 20px;
 }
 
-main .lightbox .container-lightbox .dos{
-    color: white;
-    position: absolute;
-    top: 200px;
-    right: 500px;
+main .lightbox .container-lightbox .container-imgs-secondary{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+main .lightbox .container-lightbox .container-imgs-secondary .little-img-lihgtbox{
+    margin: 20px;
+    object-fit: cover;
+    height: 200px;
+    cursor: pointer;
+}
 /* FIN MAIN */
 
 
