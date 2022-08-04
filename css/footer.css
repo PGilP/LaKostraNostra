@@ -8,13 +8,34 @@ footer{
     height: 200px;
 }
 
+footer .brand{
+    width: 129px;
+}
 
-footer .socials a{
-    margin: auto 5px;
+footer .socials{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+footer .socials a:first-child{
+    margin-right: 15px;
+}
+
+footer .socials a:last-child{
+    margin-left: 15px;
 }
 
 footer .credits{
+    display: flex;
+    flex-direction: column;
     text-align: center;
+}
+
+footer .credits span{
+    padding: 5px;
 }
 
 

@@ -1,8 +1,16 @@
 $(window).on("load", function(){
 
     //Calcular tamaño image-slider
+
+    var ventana_ancho = $(window).width();
+    console.log(ventana_ancho);
     var heightHeader = $("header").outerHeight();
-    $(".images-slider").height("calc(100vh - "+heightHeader+"px)");
+    if(ventana_ancho < 500){
+        $(".images-slider").height(ventana_ancho*0.8+"px");
+    }else{
+        $(".images-slider").height("calc(100vh - "+heightHeader+"px)");
+    }
+    
     //
 })
 
@@ -85,8 +93,6 @@ $(document).ready(function(){
         
     });
 
-    //FUncionamiento flechas
-
     $(".lightbox .arrow").click(function(event){
         event.stopPropagation();
 
@@ -97,6 +103,9 @@ $(document).ready(function(){
         arrowFeature(quantity, numImagen , active, $(this),urlImgNoPrefix,$(".principal-img-lihgtbox"),claseFlecha);
     });
 
+    $(".lightbox .img-principal").click(function(event){
+        event.stopPropagation();
+    });
 
     //Cerrar y vaciar contenido
 
@@ -114,6 +123,7 @@ $(document).ready(function(){
 
     //
 
+    //Funcionamiento flechas
     function arrowFeature(quantity, imagen, active, arrow, url, claseImagen, claseFlecha){
 
         if(imagen == quantity && active ){

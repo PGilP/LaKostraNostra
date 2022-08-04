@@ -55,4 +55,8 @@ header .links .link.dropdown:hover .list-dropdown {
     flex-direction: column;
 }
 
+header .links .desplegable{
+    display: none;
+}
+
 /* FIN HEADER */

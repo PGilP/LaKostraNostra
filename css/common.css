@@ -13,6 +13,7 @@
 html{
     scroll-behavior: smooth;
 }
+
 body{
     margin: 0;
 }
@@ -26,9 +27,7 @@ a{
     padding: 5px 142px;
 }
 
-.brand{
-    width: 129px;
-}
+
 
 .scrollbarInvisible{
     width : 100vw;
@@ -49,10 +48,6 @@ a{
 .arrow.disabled{
     color:grey;
     cursor: default;
-}
-
-.arrow span{
-    font-size: 50px;
 }
 
 
@@ -131,7 +126,7 @@ main .container-products .card{
     justify-content: space-between;
     align-items: center;
     width: 20%;
-    background-color: gray;
+    background-color: rgba(128, 128, 128, 0.7);
     border-radius: 10%;
     margin: 10px 10px;
 }
@@ -179,8 +174,9 @@ main .lightbox .container-lightbox .container-img-principal{
     align-items: center;
 }
 
+
 main .lightbox .container-lightbox .container-img-principal .img-principal{
-    height: 800px;
+    height: 100%;
 }
 
 main .lightbox .container-lightbox .container-img-principal .img-principal .principal-img-lihgtbox{
@@ -191,7 +187,7 @@ main .lightbox .hide{
     color: white;
     align-self: flex-end;
     cursor:pointer;
-    margin: 20px;
+    margin: 20px 20px 0;
 }
 
 main .lightbox .container-lightbox .container-img-principal .arrow:not(.disabled){
@@ -202,12 +198,14 @@ main .lightbox .container-lightbox .container-imgs-secondary{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 20%;
+    padding: 20px;
 }
 
 main .lightbox .container-lightbox .container-imgs-secondary .little-img-lihgtbox{
     margin: 20px;
     object-fit: cover;
-    height: 200px;
+    height: 100%;
     cursor: pointer;
 }
 /* FIN MAIN */
@@ -216,6 +214,66 @@ main .lightbox .container-lightbox .container-imgs-secondary .little-img-lihgtbo
 
 /* MEDIA QUERYS*/
 
+
+@media (max-width: 2000px ) {
+    main .lightbox .container-lightbox .container-img-principal{
+        height: 70%;
+    }
+
+    .wrapper{
+        padding: 5px 100px;
+    }
+}
+
+@media (max-width: 1500px ) {
+    main .lightbox .container-lightbox .container-img-principal{
+        height: 65%;
+
+    }
+
+    .wrapper{
+        padding: 5px 80px;
+    }
+}
+
+@media (max-width: 1000px ) {
+    main .lightbox .container-lightbox .container-img-principal{
+        height: 60%;
+        padding: 5px 50px;
+    }
+
+    .wrapper{
+        padding: 5px 20px;
+    }
+
+    main .container-products .card .desc {
+        font-size: 2.3vw;
+    }
+
+    main .images-slider .arrow span{
+        display: none;
+    }
+
+}
+
+@media (max-width: 576px ) {
+    main .lightbox .container-lightbox .container-img-principal{
+        height: 50%;
+        padding: 5px 50px;
+    }
+
+    .wrapper{
+        padding: 5px 20px;
+    }
+
+    main .container-products .card{
+        width: 100%;
+    }
+
+    main .container-products .card .desc {
+        font-size: 6.8vw;
+    }
+}
 
 /* 
 Breakpoint	    Dimensions
