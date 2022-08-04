@@ -30,10 +30,6 @@ a{
     width: 129px;
 }
 
-.brand img{
-    width: 100%;
-}
-
 .scrollbarInvisible{
     width : 100vw;
     height : 100vh;
@@ -41,6 +37,11 @@ a{
 }
 
 .arrow{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+
     align-self: center;
     cursor: pointer;
 }
@@ -191,6 +192,10 @@ main .lightbox .hide{
     align-self: flex-end;
     cursor:pointer;
     margin: 20px;
+}
+
+main .lightbox .container-lightbox .container-img-principal .arrow:not(.disabled){
+    color: white;
 }
 
 main .lightbox .container-lightbox .container-imgs-secondary{
