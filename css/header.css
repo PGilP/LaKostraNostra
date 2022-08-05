@@ -5,12 +5,51 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: auto;
 }
 
 header .brand{
     width: 129px;
     display: flex;
 }
+
+header .hambur .line{
+    width: 80px;
+    background-color: black;
+    border-radius: 10px;
+    padding: 2px;
+    margin: 25px;
+}
+
+header .hambur #first-line{
+    transform: initial;
+    transform-origin: 0% 0%;
+    transition: all 0.3s linear;
+}
+
+header .hambur #second-line{
+    opacity: 1;
+    transition: all 0.3s linear;
+}
+
+header .hambur #third-line{
+    transform: initial;
+    transform-origin: 0% 0%;
+    transition: all 0.3s linear;
+}
+
+header .hambur.open #first-line{
+    transform: rotateZ(36deg) scaleX(1.27);
+}
+
+header .hambur.open #second-line{
+    opacity: 0;
+}
+
+header .hambur.open #third-line{
+    transform: rotateZ(-36deg) scaleX(1.27);
+}
+
 
 header .brand img{
     width: 100%;
@@ -23,6 +62,7 @@ header .brand img:hover{
 
 header .links{
     display: flex;
+    flex-direction: column;
 }
 
 header .links .link{
@@ -55,18 +95,27 @@ header .links .link.dropdown:hover .list-dropdown {
     flex-direction: column;
 }
 
-header .links .desplegable{
+header .links .hambur{
     display: none;
+    cursor: pointer;
+}
+
+header .container-links{
+    display: flex;
+    flex-direction: row;
 }
 
 @media (max-width: 1000px ) {
-
-    header .links .desplegable{
+    header .links .hambur{
         display: block;
     }
 
-    header .links div:not(.desplegable){
+    header .container-links{
         display: none;
+    }
+
+    header .links .container-links .link{
+        margin: 0;
     }
 
 }

@@ -125,8 +125,9 @@ $(document).ready(function(){
 
     //Menu desplegable
 
-    $("header .links .desplegable").click(function(){
-
+    $("header .links .hambur").click(function(){
+        $(this).toggleClass("open");
+        $(".container-links").slideToggle();
     });
 
     //Funcionamiento flechas
