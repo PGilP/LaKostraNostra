@@ -10,10 +10,21 @@ footer{
 
 footer .brand{
     width: 33.33%;
+
 }
 
 footer .brand img{
     width: 129px;
+    transform: rotateY(0deg);
+    transition: all 1s linear;
+}
+
+footer .brand .transition-brand{
+    width: 129px;
+}
+
+footer .brand .transition-brand:hover img{
+    transform: rotateY(360deg) rotateX(360deg);
 }
 
 footer .socials{
@@ -56,25 +67,8 @@ footer .credits span{
         justify-content: center;
     }
 
-    footer .brand img{
-        width: 100px;
-    }
-
-    /* footer .socials{
-        flex-direction: column;
-    } */
-
-    /* footer .socials img{
-        width: 30px;
-    } */
-    
-    /* footer div.socials a.instagram,
-    footer div.socials a.vinted{
-        margin: 10px 0;
-    } */
-
     footer .credits{
-        font-size: 3vw;
+        font-size: 3.2vw;
         text-align: center;
         width: 100%;
     }

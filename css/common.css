@@ -50,6 +50,17 @@ a{
     cursor: default;
 }
 
+.loading{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--main-color);
+    z-index: 200;
+}
+
+.loading img{
+    width: 100%;
+    height: 100%;
+}
 
 /* FIN CLASES GENERALES */
 
