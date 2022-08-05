@@ -5,7 +5,7 @@ $(window).on("load", function(){
     var ventana_ancho = $(window).width();
     console.log(ventana_ancho);
     var heightHeader = $("header").outerHeight();
-    if(ventana_ancho < 500){
+    if(ventana_ancho < 600){
         $(".images-slider").height(ventana_ancho*0.8+"px");
     }else{
         $(".images-slider").height("calc(100vh - "+heightHeader+"px)");
@@ -59,14 +59,8 @@ $(document).ready(function(){
                 $(".img-principal").append('<img class="principal-img-lihgtbox" src='+urlImgFinal+'>');
             }    
         
+            $(".container-imgs-secondary").append('<img class="little-img-lihgtbox" src='+urlImgFinal+'>');
 
-            if( $(this).data("product") == "estuche_leopardo"){
-                $(".container-imgs-secondary").append('<img class="little-img-lihgtbox estuche" src='+urlImgFinal+'>');
-            }else{
-                $(".container-imgs-secondary").append('<img class="little-img-lihgtbox" src='+urlImgFinal+'>');
-            }
-            
-            
         }
 
         $(".little-img-lihgtbox").click(function(event){
