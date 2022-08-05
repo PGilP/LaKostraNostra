@@ -203,7 +203,7 @@ main .lightbox .container-lightbox .container-imgs-secondary{
 }
 
 main .lightbox .container-lightbox .container-imgs-secondary .little-img-lihgtbox{
-    margin: 20px;
+    padding: 20px;
     object-fit: cover;
     height: 100%;
     cursor: pointer;
@@ -245,6 +245,7 @@ main .lightbox .container-lightbox .container-imgs-secondary .little-img-lihgtbo
     .wrapper{
         padding: 5px 20px;
     }
+    
 
     main .container-products .card .desc {
         font-size: 2.3vw;
@@ -252,6 +253,14 @@ main .lightbox .container-lightbox .container-imgs-secondary .little-img-lihgtbo
 
     main .images-slider .arrow span{
         display: none;
+    }
+
+    main .lightbox .container-lightbox .container-imgs-secondary .little-img-lihgtbox.estuche{
+        width: 20%;
+    }
+
+    header .links .desplegable{
+        display: block;
     }
 
 }

@@ -36,7 +36,7 @@ $(document).ready(function(){
     var urlImgNoPrefix ;
     var quantity       ;
 
-    $(".product.card").click(function(){
+    $(".product.card").click(function(event){
         $(".lightbox").show();
         $("body").addClass("scrollbarInvisible");
 
@@ -52,14 +52,20 @@ $(document).ready(function(){
         }
 
         for (let index = 1; index <= quantity; index++) {
-            
+            console.log("Vuelta num -->"+ index);
             var urlImgFinal = urlImgNoPrefix + index + ".jpg";
 
             if(index == 1){
                 $(".img-principal").append('<img class="principal-img-lihgtbox" src='+urlImgFinal+'>');
             }    
         
-            $(".container-imgs-secondary").append('<img class="little-img-lihgtbox" src='+urlImgFinal+'>');
+
+            if( $(this).data("product") == "estuche_leopardo"){
+                $(".container-imgs-secondary").append('<img class="little-img-lihgtbox estuche" src='+urlImgFinal+'>');
+            }else{
+                $(".container-imgs-secondary").append('<img class="little-img-lihgtbox" src='+urlImgFinal+'>');
+            }
+            
             
         }
 
@@ -122,6 +128,12 @@ $(document).ready(function(){
     });
 
     //
+
+    //Menu desplegable
+
+    $("header .links .desplegable").click(function(){
+
+    });
 
     //Funcionamiento flechas
     function arrowFeature(quantity, imagen, active, arrow, url, claseImagen, claseFlecha){

@@ -59,4 +59,16 @@ header .links .desplegable{
     display: none;
 }
 
+@media (max-width: 1000px ) {
+
+    header .links .desplegable{
+        display: block;
+    }
+
+    header .links div:not(.desplegable){
+        display: none;
+    }
+
+}
+
 /* FIN HEADER */
