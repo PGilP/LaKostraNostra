@@ -5,14 +5,19 @@ footer{
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 200px;
+    height: 100%;
 }
 
 footer .brand{
+    width: 33.33%;
+}
+
+footer .brand img{
     width: 129px;
 }
 
 footer .socials{
+    width: 33.33%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -29,13 +34,51 @@ footer .socials a:last-child{
 }
 
 footer .credits{
+    width: 33.33%;
     display: flex;
     flex-direction: column;
-    text-align: center;
+    text-align: right;
 }
 
 footer .credits span{
     padding: 5px;
+}
+
+@media (max-width: 576px ) {
+
+    footer{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    footer .brand{
+        display: flex;
+        justify-content: center;
+    }
+
+    footer .brand img{
+        width: 100px;
+    }
+
+    /* footer .socials{
+        flex-direction: column;
+    } */
+
+    /* footer .socials img{
+        width: 30px;
+    } */
+    
+    /* footer div.socials a.instagram,
+    footer div.socials a.vinted{
+        margin: 10px 0;
+    } */
+
+    footer .credits{
+        font-size: 3vw;
+        text-align: center;
+        width: 100%;
+    }
+
 }
 
 

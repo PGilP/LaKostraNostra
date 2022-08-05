@@ -5,7 +5,7 @@ $(window).on("load", function(){
     var ventana_ancho = $(window).width();
     console.log(ventana_ancho);
     var heightHeader = $("header").outerHeight();
-    if(ventana_ancho < 600){
+    if(ventana_ancho < 700){
         $(".images-slider").height(ventana_ancho*0.8+"px");
     }else{
         $(".images-slider").height("calc(100vh - "+heightHeader+"px)");
