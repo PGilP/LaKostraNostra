@@ -12,40 +12,31 @@ $(window).on("load", function(){
    //
 })
 
-function hideLogo(){
-    $(".loading").fadeOut(1000, function(){
-        $("body").removeClass("scrollbar-invisible");
-    });
-    // $(".image-slider").css({
-    //     "display" : "flex"
-    // });
-};
-
 $(document).ready(function(){
     //Mostrar imagen logo
     setTimeout(function(){
         hideLogo();
     }, 3000);
-    
-    //Funcion de cambio de imagen al clickar en las flechas
-    $(".images-slider .arrow").click(function(){
-        var quantity = parseInt($(".news").data("quantity"));
-        var imagen   =  parseInt($(".new").attr("src").substring(19,20));
-        var active   = !$(this).hasClass("disabled");
-        var url      = "imgs/JPG/Novedades/";
-        arrowFeature(quantity, imagen , active, $(this),url,$(".new"), ".images-slider");
-    });
-    //
 
     // Lightbox
 
-    //Abrir y cargar contenido
 
     var claseFlecha    ;
     var urlImgNoPrefix ;
     var quantity       ;
 
-    $(".product.card").click(function(event){
+    //Funcion de cambio de imagen al clickar en las flechas
+    $(".images-slider .arrow").click(function(){
+        var imagen   =  parseInt($(".new").attr("src").substring(19,20));
+        var active   = !$(this).hasClass("disabled");
+        var url      = "imgs/JPG/Novedades/";
+        quantity     = parseInt($(".news").data("quantity"));
+        arrowFeature(quantity, imagen , active, $(this),url,$(".new"), ".images-slider");
+    });
+    //
+
+    //Abrir y cargar contenido
+    $(".product.card").click(function(){
         $(".lightbox").show();
         $("body").addClass("scrollbar-invisible");
 
@@ -97,9 +88,6 @@ $(document).ready(function(){
             }
 
         });
-
-
-        
     });
 
     $(".lightbox .arrow").click(function(event){
@@ -139,39 +127,45 @@ $(document).ready(function(){
         $(".container-links").slideToggle();
     });
 
-    //Funcionamiento flechas
-    function arrowFeature(quantity, imagen, active, arrow, url, claseImagen, claseFlecha){
-
-        if(imagen == quantity && active ){
-            if(arrow.hasClass("previous")){
-                imagen -=1;
-                claseImagen.attr("src", url+(imagen)+".jpg");
-            }
-        }else if(imagen == 1 && active){
-            if(arrow.hasClass("next")){
-                imagen +=1;
-                claseImagen.attr("src", url+(imagen)+".jpg");
-            }
-        }else if(active){
-            if(arrow.hasClass("next")){
-                imagen +=1;
-                claseImagen.attr("src", url+(imagen)+".jpg");
-            }else if(arrow.hasClass("previous")){
-                imagen -=1;
-                claseImagen.attr("src", url+(imagen)+".jpg");
-            }
-        }
-        
-        if(imagen == quantity){
-            $(claseFlecha+" .arrow.next").addClass("disabled");
-            $(claseFlecha+" .arrow.previous").removeClass("disabled");
-        }else if(imagen == 1){
-            $(claseFlecha+" .arrow.previous").addClass("disabled");
-            $(claseFlecha+" .arrow.next").removeClass("disabled");
-        }else{
-            $(claseFlecha+" .arrow").removeClass("disabled");
-        }
-        
-    }
-
 });
+
+function hideLogo(){
+    $(".loading").fadeOut(1000, function(){
+        $("body").removeClass("scrollbar-invisible");
+    });
+};
+
+//Funcionamiento flechas
+function arrowFeature(quantity, imagen, active, arrow, url, claseImagen, claseFlecha){
+
+    if(imagen == quantity && active ){
+        if(arrow.hasClass("previous")){
+            imagen -=1;
+            claseImagen.attr("src", url+(imagen)+".jpg");
+        }
+    }else if(imagen == 1 && active){
+        if(arrow.hasClass("next")){
+            imagen +=1;
+            claseImagen.attr("src", url+(imagen)+".jpg");
+        }
+    }else if(active){
+        if(arrow.hasClass("next")){
+            imagen +=1;
+            claseImagen.attr("src", url+(imagen)+".jpg");
+        }else if(arrow.hasClass("previous")){
+            imagen -=1;
+            claseImagen.attr("src", url+(imagen)+".jpg");
+        }
+    }
+    
+    if(imagen == quantity){
+        $(claseFlecha+" .arrow.next").addClass("disabled");
+        $(claseFlecha+" .arrow.previous").removeClass("disabled");
+    }else if(imagen == 1){
+        $(claseFlecha+" .arrow.previous").addClass("disabled");
+        $(claseFlecha+" .arrow.next").removeClass("disabled");
+    }else{
+        $(claseFlecha+" .arrow").removeClass("disabled");
+    }
+    
+}

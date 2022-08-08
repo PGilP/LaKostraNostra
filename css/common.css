@@ -61,7 +61,7 @@ a{
     width: 100%;
     height: 100vh;
     background-color: var(--main-color);
-    z-index: 100;
+    z-index: 200;
 }
 
 .loading img{
@@ -175,9 +175,10 @@ main .container-products .card{
     justify-content: space-between;
     align-items: center;
     width: 20%;
-    background-color: rgba(128, 128, 128, 0.7);
+    background-color: rgb(128 128 128 / 0.7);
     border-radius: 10%;
     margin: 10px 10px;
+    box-shadow: 3px 3px 10px rgb(0 0 0 / 20%);
 }
 
 main .container-products .card .image{
@@ -209,6 +210,7 @@ main .lightbox{
     background-color: rgba(0,0,0, 0.9);
     overflow-x:hidden;
     overflow-y:hidden;
+    z-index: 100;
 }
 
 main .lightbox .container-lightbox{
