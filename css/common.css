@@ -16,6 +16,7 @@ html{
 
 body{
     margin: 0;
+    position: relative;
 }
 
 a{
@@ -29,7 +30,7 @@ a{
 
 
 
-.scrollbarInvisible{
+.scrollbar-invisible{
     width : 100vw;
     height : 100vh;
     overflow : hidden;
@@ -51,15 +52,24 @@ a{
 }
 
 .loading{
-    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100vh;
     background-color: var(--main-color);
-    z-index: 200;
+    z-index: 100;
 }
 
 .loading img{
+    animation-name: late;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
     width: 100%;
-    height: 100%;
+    height: 80%;
 }
 
 /* FIN CLASES GENERALES */
@@ -106,6 +116,7 @@ main .images-slider{
 
 main .images-slider img{
     height: 100%;
+    width: 100%;
 }
 
 main .images-slider .arrow{
@@ -131,7 +142,34 @@ main .container-products{
     justify-content: center;
 }
 
+main .container-products .contain-lupa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    transition: all .3s linear;
+    border-radius: 8%;
+}
+
+main .container-products .contain-lupa:hover{
+    background-color: rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+
+main .container-products .contain-lupa .lupa{
+    filter: brightness(0) invert(1);
+    opacity: 0;
+}
+
+main .container-products .contain-lupa:hover .lupa{
+    opacity: 1;
+}
+
 main .container-products .card{
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -144,6 +182,10 @@ main .container-products .card{
 
 main .container-products .card .image{
     width: 100%;
+}
+
+main .container-products .card:hover{
+    cursor: pointer;
 }
 
 main .container-products .card .desc{
@@ -249,6 +291,11 @@ main .lightbox .container-lightbox .container-imgs-secondary .little-img-lihgtbo
     .wrapper{
         padding: 5px 80px;
     }
+
+    .loading img{
+        width: 100%;
+        height: 80%;
+    }
 }
 
 @media (max-width: 1000px ) {
@@ -262,6 +309,7 @@ main .lightbox .container-lightbox .container-imgs-secondary .little-img-lihgtbo
     }
     
 
+
     main .container-products .card .desc {
         font-size: 2.3vw;
     }
@@ -274,7 +322,10 @@ main .lightbox .container-lightbox .container-imgs-secondary .little-img-lihgtbo
         width: 20%;
     }
 
-
+    .loading img{
+        width: 100%;
+        height: 70%;
+    }
 
 }
 
@@ -304,6 +355,11 @@ main .lightbox .container-lightbox .container-imgs-secondary .little-img-lihgtbo
         justify-content: flex-start;
         overflow: scroll;
     }
+
+    .loading img{
+        width: 100%;
+        height: 40%;
+    }
 }
 
 /* 
@@ -316,3 +372,16 @@ Extra large	        ≥1200px
 */
 
 /* FIN MEDIA QUERYS*/
+
+/* KEYFRAMES*/
+
+@keyframes late{
+    0%,100%{
+        transform: scale(1)
+    }
+    50%{
+        transform: scale(1.1)
+    }
+}
+
+/*FIN KEYFRAMES*/

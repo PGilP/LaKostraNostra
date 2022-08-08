@@ -1,7 +1,6 @@
 $(window).on("load", function(){
 
     //Calcular tamaño image-slider
-
     var ventana_ancho = $(window).width();
     console.log(ventana_ancho);
     var heightHeader = $("header").outerHeight();
@@ -10,13 +9,23 @@ $(window).on("load", function(){
     }else{
         $(".images-slider").height("calc(100vh - "+heightHeader+"px)");
     }
-    
-    //
+   //
 })
 
-$(document).ready(function(){
+function hideLogo(){
+    $(".loading").fadeOut(1000, function(){
+        $("body").removeClass("scrollbar-invisible");
+    });
+    // $(".image-slider").css({
+    //     "display" : "flex"
+    // });
+};
 
-    
+$(document).ready(function(){
+    //Mostrar imagen logo
+    setTimeout(function(){
+        hideLogo();
+    }, 3000);
     
     //Funcion de cambio de imagen al clickar en las flechas
     $(".images-slider .arrow").click(function(){
@@ -38,7 +47,7 @@ $(document).ready(function(){
 
     $(".product.card").click(function(event){
         $(".lightbox").show();
-        $("body").addClass("scrollbarInvisible");
+        $("body").addClass("scrollbar-invisible");
 
         claseFlecha    = ".lightbox";
         urlImgNoPrefix = "imgs/JPG/" + $(this).data("product") + "/";
@@ -115,7 +124,7 @@ $(document).ready(function(){
         $(".lightbox  .arrow.next").removeClass("disabled");
 
         $(".lightbox").hide();
-        $("body").removeClass("scrollbarInvisible");
+        $("body").removeClass("scrollbar-invisible");
 
         $(".container-imgs-secondary").empty();
         $(".container-img-principal .img-principal").empty();
@@ -166,37 +175,3 @@ $(document).ready(function(){
     }
 
 });
-
-
-
-
-
-// if(imagen == quantity && active ){
-//     console.log("imagen = quantity");
-//     if($(this).hasClass("previous")){
-//         imagen -=1;
-//         $(".new").attr("src", "imgs/JPG/Novedades/"+(imagen)+".jpg");
-//     }
-// }else if(imagen == 1 && active){
-//     if($(this).hasClass("next")){
-//         imagen +=1;
-//         $(".new").attr("src", "imgs/JPG/Novedades/"+(imagen)+".jpg");
-//     }
-// }else if(active){
-//     console.log("else");
-//     if($(this).hasClass("next")){
-//         imagen +=1;
-//         $(".new").attr("src", "imgs/JPG/Novedades/"+(imagen)+".jpg");
-//     }else if($(this).hasClass("previous")){
-//         imagen -=1;
-//         $(".new").attr("src", "imgs/JPG/Novedades/"+(imagen)+".jpg");
-//     }
-// }
-
-// if(imagen == quantity){
-//     $(".images-slider .arrow.next").addClass("disabled");
-// }else if(imagen == 1){
-//     $(".images-slider .arrow.previous").addClass("disabled");
-// }else{
-//     $(".images-slider .arrow").removeClass("disabled");
-// }
