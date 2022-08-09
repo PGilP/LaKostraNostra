@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../imgs/SVG/logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/contact.css">
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
@@ -17,31 +18,31 @@
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
     </script>
     <script type="text/javascript">
-        (function(){
-            emailjs.init("A77eRGojrYYukex48");
-        })();
+        // (function(){
+        //     emailjs.init("A77eRGojrYYukex48");
+        // })();
 
-        window.onload = function() {
-            // window cargado
-            document.getElementById('contact-form').addEventListener('submit',function(event){
-                event.preventDefault(); //Se usa para cortar un evento y ejecutar solo lo que me interesa
-                console.log("HOla");
+        // window.onload = function() {
+        //     // window cargado
+        //     document.getElementById('contact-form').addEventListener('submit',function(event){
+        //         event.preventDefault(); //Se usa para cortar un evento y ejecutar solo lo que me interesa
+        //         console.log("HOla");
 
-                emailjs.sendForm('service_ixjx2cr', 'template_wms6ovv', this)
-                    .then( 
-                        function( success){
-                            //Envio con exito
-                            console.log('exito', success);
-                        },
-                        function(error){
-                            //Envio con error
-                            console.log('error', error);
-                        }
-                    );
-            });
+        //         emailjs.sendForm('service_ixjx2cr', 'template_wms6ovv', this)
+        //             .then( 
+        //                 function( success){
+        //                     //Envio con exito
+        //                     console.log('exito', success);
+        //                 },
+        //                 function(error){
+        //                     //Envio con error
+        //                     console.log('error', error);
+        //                 }
+        //             );
+        //     });
 
 
-        };
+        // };
 
 
 
@@ -70,36 +71,49 @@
                 </div>
     
                 <div class="link contact">
-                    <a href="pages/contact.html" class="link-principal">CONTACTO</a>
+                    <a href="#" class="link-principal">CONTACTO</a>
                 </div>
             </div>
         </nav>
 
     </header>
 
-    <main>
+    <main class="main-contact">
         <section class="send-data wrapper">
+            <h2>Formulario Contacto</h2>
             <form id="contact-form">
-                <label for="nombre">Nombre</label>
-                <input type="text" name="nombre" id="nombre">
-                <br>
+                <div id="nombre" class="form-group active" data-step="1">
+                    <label for="nombre">Nombre</label>
+                    <input class="val-input" type="text" name="nombre" id="nombre" >
+                </div>
 
-                <label for="correo">Email</label>
-                <input type="email" name="correo" id="correo">
-                <br>
+                <div id="correo" class="form-group email" data-step="2">
+                    <label for="correo">Email</label>
+                    <input class="val-input" type="email" name="correo" id="correo">
+                </div>
 
-                <label for="asunto">Asunto</label>
-                <input type="text" name="asunto" id="asunto">
-                <br>
+                <div id="asunto" class="form-group" data-step="3">
+                    <label for="asunto">Asunto</label>
+                    <input class="val-input" type="text" name="asunto" id="asunto">
+                </div>
 
-                <label for="mensaje">Mensaje</label>
-
-                <textarea id="mensaje" name="mensaje" rows="4" cols="50"></textarea>
+                <div id="mensaje" class="form-group" data-step="4">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea class="val-input" id="mensaje" name="mensaje" rows="4"></textarea>
+                </div>
                 
-                <br>
+                <div class="button continue">
+                    <span class="next-step">Continuar</span>
+                </div>
 
-                <input type="submit" value="Enviar">
+                <div class="button send disabled">
+                    <p>¿Los datos son correctos?</p>
+                    <span class="next-step reset">No enviar</span>
+                    <span class="next-step finally-send">Enviar</span>
+                </div>
+
             </form>
+            <div></div>
         </section>
     </main>
 

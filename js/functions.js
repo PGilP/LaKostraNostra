@@ -10,6 +10,13 @@ $(window).on("load", function(){
         $(".images-slider").height("calc(100vh - "+heightHeader+"px)");
     }
    //
+
+   //Calcular tamaño formulario
+    var heightFooter = $("footer").outerHeight();
+    if(ventana_ancho > 700){
+        $(".main-contact").height("calc(100vh - "+(heightFooter+heightHeader)+"px");
+    }
+
 })
 
 $(document).ready(function(){
@@ -127,7 +134,42 @@ $(document).ready(function(){
         $(".container-links").slideToggle();
     });
 
+    //Funcionamiento formulario
+    $(".continue .next-step").click(function(){
+        var inputFormActual = $(".form-group.active");
+        var step            = inputFormActual.data("step");
+        var value           = inputFormActual.children(".val-input").val();
+        var id              = inputFormActual.attr("id");
+        var inputFormNext   = $('.form-group[data-step="'+(step+1)+'"]');
+
+        if(step == 5){
+            
+        }
+
+        $(".form-group > div."+id+" > input").val(value);
+        inputFormActual.removeClass("active");
+        inputFormNext.addClass("active");
+        
+        if(step == 4){
+            $(".button.send").removeClass("disabled");
+            $(".button.continue").addClass("disabled");
+            $(".form-group").addClass("active");
+            $(".form-group > label + *").attr("disabled","disabled");
+        }
+    });
 });
+
+function sendForm() {
+    var valido = false; 
+
+    if (valido) {
+      console.log("Enviado")
+      document.getElementById("contact-form").submit();
+    } else {
+        console.log("No enviado")
+      return false;
+    }
+  }
 
 function hideLogo(){
     $(".loading").fadeOut(1000, function(){
