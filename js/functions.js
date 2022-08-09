@@ -135,18 +135,27 @@ $(document).ready(function(){
     });
 
     //Funcionamiento formulario
-    $(".continue .next-step").click(function(){
+    $(".continue .next-step").click(function(event){
+        event.preventDefault();
         var inputFormActual = $(".form-group.active");
         var step            = inputFormActual.data("step");
         var value           = inputFormActual.children(".val-input").val();
         var id              = inputFormActual.attr("id");
         var inputFormNext   = $('.form-group[data-step="'+(step+1)+'"]');
+        
 
-        if(step == 5){
-            
-        }
+
+
+
+
 
         $(".form-group > div."+id+" > input").val(value);
+        var ok = vacio(value);
+        if(ok){
+            inputFormActual.append('<div style="color:red">*El campo no puede ir vacío</div>');
+            return;
+        }
+
         inputFormActual.removeClass("active");
         inputFormNext.addClass("active");
         
@@ -158,6 +167,14 @@ $(document).ready(function(){
         }
     });
 });
+
+function vacio(val){
+    if(val == ''){
+        return true;
+    }else{
+        return false;
+    }
+}
 
 function sendForm() {
     var valido = false; 
