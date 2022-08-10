@@ -22,17 +22,38 @@
             emailjs.init("A77eRGojrYYukex48");
         })();
 
+        function resetPage(){
+            $(".popup.exito").removeClass("visible");
+            $(".button.send").addClass("disabled");
+            $(".form-group > label + *").val("");
+            $(".button.continue").removeClass("disabled");
+            $(".form-group > label + *").attr("disabled",false);
+            $(".form-group").removeClass("active");
+            $(".form-group#nombre").addClass("active");
+            $(".send-data").css({
+                "opacity" : "1"
+            });
+        }
+
         window.onload = function() {
             // window cargado
             document.getElementById('contact-form').addEventListener('submit',function(event){
                 event.preventDefault(); //Se usa para cortar un evento y ejecutar solo lo que me interesa
-                console.log("HOla");
 
                 emailjs.sendForm('service_ixjx2cr', 'template_wms6ovv', this)
                     .then( 
-                        function( success){
+                        function(success){
+                            $(".popup.exito").addClass("visible");
+                            $(".send-data").css({
+                            "opacity" : "0.1"
+                            });
+
+                            setTimeout(function(){
+                                resetPage();
+                            },1000);
                             
                             console.log('exito', success);
+
                         },
                         function(error){
                             //Envio con error
@@ -104,14 +125,19 @@
 
                 <div class="button send disabled">
                     <p>¿Los datos son correctos?</p>
-                    <input class="next-step finally-send" type="submit" onclick="document.contact-form.submit()" value="Enviar">
-                    <button class="next-step reset">No enviar</button>
-                    
+                    <input class="next-step finally-send" type="submit" value="Enviar">
+                    <span class="next-step reset" >No enviar</span>
+                    <div class="face-sad" style="font-size:200px">😭</div>
                 </div>
 
             </form>
             <div></div>
+            
         </section>
+        <div class="popup exito">
+            <span>😀</span>  <br>
+            ¡Tu email se ha enviado!
+        </div>
     </main>
 
     <footer class="wrapper">

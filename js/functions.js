@@ -13,9 +13,9 @@ $(window).on("load", function(){
 
    //Calcular tamaño formulario
     var heightFooter = $("footer").outerHeight();
-    if(ventana_ancho > 700){
+    // if(ventana_ancho > 700){
         $(".main-contact").height("calc(100vh - "+(heightFooter+heightHeader)+"px");
-    }
+    // }
 
 })
 
@@ -137,23 +137,21 @@ $(document).ready(function(){
     //Funcionamiento formulario
     $(".continue .next-step").click(function(event){
         event.preventDefault();
+        $(".field-empty").hide();
         var inputFormActual = $(".form-group.active");
         var step            = inputFormActual.data("step");
         var value           = inputFormActual.children(".val-input").val();
         var id              = inputFormActual.attr("id");
         var inputFormNext   = $('.form-group[data-step="'+(step+1)+'"]');
         
-
-
-
-
-
-
         $(".form-group > div."+id+" > input").val(value);
         var ok = vacio(value);
         if(ok){
-            inputFormActual.append('<div style="color:red">*El campo no puede ir vacío</div>');
+            
+            inputFormActual.append('<div class="field-empty" style="color:red">*El campo no puede ir vacío</div>');
             return;
+        }else{
+            $(".field-empty").hide();
         }
 
         inputFormActual.removeClass("active");
@@ -165,6 +163,15 @@ $(document).ready(function(){
             $(".form-group").addClass("active");
             $(".form-group > label + *").attr("disabled","disabled");
         }
+    });
+
+    $(".reset").click(function(){
+        console.log("HOla");
+        $(".button.send .face-sad").show();
+        setTimeout(function(){
+            $(".button.send .face-sad").hide();
+            resetPage();
+        }, 1000);
     });
 });
 
